@@ -16,9 +16,11 @@ ssize_t	reading(int fd, char *line)
 
 char *get_next_line(int fd)
 {
-	char *line;
+	static char *line;
+	int readed;
 
-	
+	readed = read(fd, line, BUFFER_SIZE);
 	line = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	while ()
+	while (readed > 0 || line
 }
+
